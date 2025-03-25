@@ -20,6 +20,7 @@ import rooms from './routes/rooms.js';
 import bookings from './routes/bookings.js';
 import accounts from './routes/accounts.js';
 
+import cors from 'cors'
 // -------------------------- Setting -------------------------- //
 
 // Config
@@ -45,6 +46,11 @@ app.use(xss());
 
 //Prevent http param pollutions
 app.use(hpp());
+
+app.use(cors({
+    origin:`${process.env.FRONTEND_URL}`,
+    credentials:true,
+}));
 
 //Rate Limiting
 const limiter=rateLimit({

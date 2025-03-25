@@ -122,6 +122,8 @@ export const updateRoom = async(req , res , next) => {
         const room_before = await Room.findById(req.params.id);
         const {role,hotel_id} = req.user ;
 
+        // console.log("Request Body:", req.body);
+
         if(!room_before) 
             return res.status(404).json({
                 success: false , 
