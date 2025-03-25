@@ -47,10 +47,7 @@ app.use(xss());
 //Prevent http param pollutions
 app.use(hpp());
 
-app.use(cors({
-    origin:`${process.env.FRONTEND_URL}`,
-    credentials:true,
-}));
+app.use(cors());
 
 //Rate Limiting
 const limiter=rateLimit({
