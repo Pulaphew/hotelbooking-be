@@ -5,8 +5,8 @@ import { protect , authorize} from '../middlewares/auth.js';
 const router = express.Router();
 
 router.post('/register', auth.register);
-router.post('/login', auth.login);
+router.post('/login', auth.signin);
 router.get('/me', protect, auth.getMe);
-router.get('/logout', auth.logout);
+router.get('/logout', auth.signout);
 
 export default router;
