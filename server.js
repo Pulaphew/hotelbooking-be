@@ -75,7 +75,7 @@ const initializeServer = async () => {
     try {
         console.log('Backend server is starting...');
         await connectDB();
-        const server = app.listen(PORT, () => { console.log(`Backend server is ready at http://localhost:${PORT}`);});
+        const server = app.listen(PORT, () => { console.log(`Backend server is ready at ${process.env.HOST}:${PORT}`);});
 
         // -------------------------- Handle Error -------------------------- //
         process.on('unhandledRejection' , (err , promise)=> {
